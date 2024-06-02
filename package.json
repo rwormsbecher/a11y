@@ -1,0 +1,13 @@
+{
+  "name": "a11y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:1": "npx serve /src/1-semantic-html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
