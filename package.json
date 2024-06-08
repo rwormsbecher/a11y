@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:1": "npx serve /src/1-semantic-html"
+    "start:1": "npx serve /src/1-semantic-html/index.html",
+    "start:2": "npx serve /src/2-text-alternatives",
+    "start:3": "npx serve /src/3-keyboard-nav"
   },
   "keywords": [],
   "author": "",
