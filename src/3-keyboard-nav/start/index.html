@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            nav {
+                box-sizing: border-box;
+                width: 100%;
+                padding: 16px 32px;
+                background: #f6f6f6;
+            }
+            main {
+                width: 200px;
+                padding: 32px;
+                background: lightblue;
+                margin: 32px;
+            }
+            .skip-link {
+                position: absolute;
+                top: -40px;
+                left: 0;
+                background: #000;
+                color: #fff;
+                text-decoration: none;
+                padding: 8px;
+                z-index: 100;
+            }
+            .skip-link:focus {
+                top: 0;
+            }
+            h1 {
+                font-size: 22px;
+                margin: 16px 32px;
+            }
+
+            footer {
+                margin: 0 32px;
+            }
+        </style>
+        <title>Add city page</title>
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+
+        <header>
+            <nav aria-label="top navigation">
+                <ul>
+                    <li><a href="/" aria-label="Top navigation home link">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1>Add city form</h1>
+
+        <main id="main-content" tabindex="-1">
+            <form aria-label="form add city">
+                <button type="button" aria-label="Cancel">Cancel</button>
+                <button type="submit" aria-label="Add City">Add City</button>
+            </form>
+        </main>
+
+        <footer>&copy; Rodney Wormsbecher 2024</footer>
+    </body>
+</html>

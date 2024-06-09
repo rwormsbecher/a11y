@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add City Page</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 16px;
+                box-sizing: border-box;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-bottom: 1rem;
+            }
+
+            .add-city-form-container {
+                max-width: 500px;
+                margin: 100px auto 0 auto;
+            }
+
+            .add-city-form {
+                background: #f6f6f6;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .error {
+                color: darkred;
+                font-size: 12px;
+                padding: 4px 0;
+            }
+
+            .btn {
+                padding: 10px 15px;
+                margin: 5px;
+            }
+
+            .btn-cancel {
+                background-color: darkred;
+                color: white;
+            }
+
+            .btn-success {
+                background-color: darkgreen;
+                color: white;
+            }
+
+            .button-wrapper {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            input {
+                margin-top: 5px;
+                width: 100%;
+                margin-bottom: 16px;
+                padding: 8px;
+            }
+
+           
+        </style>
+    </head>
+    <body>
+        <div class="add-city-form-container">
+            <h1>Add a city</h1>
+            <div class="add-city-form">
+                <form id="addCityForm">
+                    <div>
+                        <label for="city">City:</label>
+                        <input
+                            id="city"
+                            type="text"
+                            placeholder="Please enter a city name"
+                            aria-describedby="cityError"
+                        />
+                        <div id="cityError" class="error" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                    </div>
+
+                    <div>
+                        <label for="image">Image:</label>
+                        <input
+                            id="image"
+                            type="text"
+                            placeholder="Please enter an image URL"
+                            aria-describedby="imageError"
+                        />
+                        <div id="imageError" class="error" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                    </div>
+
+                    <div>
+                        <label for="description">Description:</label>
+                        <input
+                            id="description"
+                            type="text"
+                            placeholder="Please enter a city introduction"
+                            aria-describedby="descriptionError"
+                        />
+                        <div
+                            id="descriptionError"
+                            class="error"
+                            role="alert"
+                            aria-live="assertive"
+                            aria-atomic="true"
+                        ></div>
+                    </div>
+                    <div class="button-wrapper">
+                        <button type="button" class="btn btn-cancel" onclick="redirectToHome()">Cancel</button>
+                        <button type="submit" class="btn btn-success">Add City</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("addCityForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+                let hasError = false;
+
+                const title = document.getElementById("city").value;
+                const image = document.getElementById("image").value;
+                const description = document.getElementById("description").value;
+
+                const cityError = document.getElementById("cityError");
+                const imageError = document.getElementById("imageError");
+                const descriptionError = document.getElementById("descriptionError");
+
+                if (title.length < 2) {
+                    cityError.textContent = "You must at least use 2 characters for city name.";
+                    cityError.setAttribute("tabindex", "0");
+                    hasError = true;
+                } else {
+                    cityError.textContent = "";
+                    cityError.removeAttribute("tabindex");
+                }
+
+                if (!image) {
+                    imageError.textContent = "You must enter an image URL.";
+                    imageError.setAttribute("tabindex", "0");
+                    hasError = true;
+                } else {
+                    imageError.textContent = "";
+                    imageError.removeAttribute("tabindex");
+                }
+
+                if (!description) {
+                    descriptionError.textContent = "You must enter a description.";
+                    descriptionError.setAttribute("tabindex", "0");
+                    hasError = true;
+                } else {
+                    descriptionError.textContent = "";
+                    descriptionError.removeAttribute("tabindex");
+                }
+
+                if (!hasError) {
+                    alert(`${title} has been added`);
+                    // Add logic to update cities and notification
+                    redirectToHome();
+                } else {
+                    if (title.length < 2) {
+                        cityError.focus();
+                    } else if (!image) {
+                        imageError.focus();
+                    } else if (!description) {
+                        descriptionError.focus();
+                    }
+                }
+            });
+
+            function redirectToHome() {
+                window.location.href = "/";
+            }
+        </script>
+    </body>
+</html>
