@@ -205,34 +205,28 @@
                 <form id="addCityForm">
                     <div>
                         <label for="city">City:</label>
+                        <div id="cityError" class="error" role="alert" aria-live="assertive" aria-atomic="true"></div>
                         <input
                             id="city"
                             type="text"
                             placeholder="Please enter a city name"
                             aria-describedby="cityError"
                         />
-                        <div id="cityError" class="error" role="alert" aria-live="assertive" aria-atomic="true"></div>
                     </div>
 
                     <div>
                         <label for="image">Image:</label>
+                        <div id="imageError" class="error" role="alert" aria-live="assertive" aria-atomic="true"></div>
                         <input
                             id="image"
                             type="text"
                             placeholder="Please enter an image URL"
                             aria-describedby="imageError"
                         />
-                        <div id="imageError" class="error" role="alert" aria-live="assertive" aria-atomic="true"></div>
                     </div>
 
                     <div>
                         <label for="description">Description:</label>
-                        <input
-                            id="description"
-                            type="text"
-                            placeholder="Please enter a city introduction"
-                            aria-describedby="descriptionError"
-                        />
                         <div
                             id="descriptionError"
                             class="error"
@@ -240,6 +234,12 @@
                             aria-live="assertive"
                             aria-atomic="true"
                         ></div>
+                        <input
+                            id="description"
+                            type="text"
+                            placeholder="Please enter a city introduction"
+                            aria-describedby="descriptionError"
+                        />
                     </div>
                     <div class="button-wrapper">
                         <button type="button" class="btn btn-cancel" onclick="redirectToHome()">Cancel</button>
