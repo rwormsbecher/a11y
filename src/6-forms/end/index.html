@@ -263,7 +263,7 @@
                 const descriptionError = document.getElementById("descriptionError");
 
                 if (title.length < 2) {
-                    cityError.textContent = "You must at least use 2 characters for city name.";
+                    cityError.textContent = "X You must at least use 2 characters for city name.";
                     cityError.setAttribute("tabindex", "0");
                     hasError = true;
                 } else {
@@ -272,7 +272,7 @@
                 }
 
                 if (!image) {
-                    imageError.textContent = "You must enter an image URL.";
+                    imageError.textContent = "X You must enter an image URL.";
                     imageError.setAttribute("tabindex", "0");
                     hasError = true;
                 } else {
@@ -281,7 +281,7 @@
                 }
 
                 if (!description) {
-                    descriptionError.textContent = "You must enter a description.";
+                    descriptionError.textContent = "X You must enter a description.";
                     descriptionError.setAttribute("tabindex", "0");
                     hasError = true;
                 } else {
